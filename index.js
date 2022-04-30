@@ -5,7 +5,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const jwt = require('jsonwebtoken');
 
 //it is port
-const port = process.env.PROT || 5000;
+const port = process.env.PORT || 5000;
 
 const app = express();
 
