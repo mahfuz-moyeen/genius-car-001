@@ -24,7 +24,6 @@ function verifyJWT(req, res, next) {
         if (err) {
             return res.status(403).send({ message: 'Forbidden access' })
         }
-        console.log('decoded', decoded)
         req.decoded = decoded;
         next();
 
@@ -40,7 +39,7 @@ async function run() {
         await client.connect();
         const servicesCollection = client.db("genius-car").collection("services");
         const ordersCollection = client.db("genius-car").collection("orders");
-        
+
         // AUTH //
 
         app.post('/login', async (req, res) => {
